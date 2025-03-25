@@ -3,50 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moisturizers</title>
+    <title>SkinStore</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 <body>
-    <main>
-        <section class="category-section">
-            <h1>Shop By Category</h1>
-            <div class="category-grid">
-                <div class="category-card">
-                    <img src="https://res.cloudinary.com/mergernetwork/image/upload/w_1000,h_400,c_limit,f_auto/posts/E6E44DF9-CAD1-406D-B4C8D6626F12DD1E.jpg" alt="Cleansers">
-                    <h3>Cleansers</h3>
-                    <p>Gentle formulas to remove impurities</p>
-                </div>
-                <div class="category-card">
-                    <img src="https://img.freepik.com/premium-psd/cosmetic-jar-mockup_358694-3393.jpg?w=360" alt="Moisturizers">
-                    <h3>Moisturizers</h3>
-                    <p>Hydration for all skin types</p>
-                </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>Save 25% on Organic Skincare when you buy 2 or more products. Ends 3/31. <a href="#">Shop Now</a></p>
+        <span id="current-date"></span>
+    </div>
+
+    <!-- Header with Search, Logo & Icons -->
+    <header>
+        <div class="logo">
+            <h1>SKINSTORE</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>🔍</button>
+        </div>
+        <div class="icons">
+            <span>🌍 USD</span>
+            <span>👤 Sign In</span>
+            <span>🛒 Cart</span>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="brands.html" target="_blank">Brands</a></li>
+            <li><a href="#">Skincare Products</a></li>
+            <li><a href="byCategory.html" target="_blank">By Category</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">contact us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow">
+        <div class="slide">
+            <img src="https://img.freepik.com/premium-psd/cosmetic-jar-mockup_358694-3393.jpg?w=360" alt="m">
+            <div class="slide-text">
+                <h2>Moisturizers</h2>
+                <p>A cosmetic preparation used for protecting, moisturizing, and lubricating the skin.</p>
             </div>
-        </section>
-        <section class="moisturizers">
-            <h2>Top Moisturizers</h2>
-            <table>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td><img src="https://via.placeholder.com/100" alt="Moisturizer 1"></td>
-                    <td>CeraVe Moisturizing Cream</td>
-                    <td>$12.99</td>
-                    <td>Rich hydration with ceramides and hyaluronic acid.</td>
-                </tr>
-                <tr>
-                    <td><img src="https://via.placeholder.com/100" alt="Moisturizer 2"></td>
-                    <td>The Ordinary Natural Moisturizing Factors</td>
-                    <td>$8.99</td>
-                    <td>Lightweight, non-greasy hydration for all skin types.</td>
-                </tr>
-            </table>
-        </section>
-    </main>
+        </div>
+    </section>
+<section class="moisturizers">
+    <h2>Top Moisturizers</h2>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/100" alt="Moisturizer 1"></td>
+            <td>CeraVe Moisturizing Cream</td>
+            <td>$12.99</td>
+            <td>Rich hydration with ceramides and hyaluronic acid.</td>
+        </tr>
+        <tr>
+            <td><img src="https://via.placeholder.com/100" alt="Moisturizer 2"></td>
+            <td>The Ordinary Natural Moisturizing Factors</td>
+            <td>$8.99</td>
+            <td>Lightweight, non-greasy hydration for all skin types.</td>
+        </tr>
+    </table>
+</section>
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><strong>Email:</strong> info@skinstore.com</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Beauty Street, Skincare City</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">💻</a>
+                <a href="#" class="social-icon">📧</a>
+            </div>
+        </div>
+        
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">Select Country</option>
+                    <option value="ireland">Ireland</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
 </body>
 </html>

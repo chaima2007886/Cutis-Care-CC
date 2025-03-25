@@ -90,3 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return re.test(email);
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    alert("Welcome to our skincare shop!");
+});
