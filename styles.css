@@ -86,3 +86,154 @@ footer {
     padding: 20px;
     margin-top: 40px;
 }
+
+/* ===== NEW PRODUCT GRID STYLES ===== */
+/* Product Grid Layout */
+.product-section {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.product-section h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 1px solid #000000;
+}
+
+.product-card h4 {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.product-card p {
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 14px;
+    min-height: 60px;
+}
+
+.product-card span {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Contact Page Styles */
+.contact-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+.contact-section h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+}
+
+.form-group textarea {
+    min-height: 150px;
+}
+
+.submit-btn {
+    background: #000000;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #000000;
+    font-size: 24px;
+}
