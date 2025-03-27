@@ -8,26 +8,10 @@
     <script src="script.js"></script>
 </head>
 <body>
-
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <p>Save 25% on Organic Skincare when you buy 2 or more products. Ends 3/31. <a href="#">Shop Now</a></p>
-        <span id="current-date"></span>
-    </div>
-
     <!-- Header with Search, Logo & Icons -->
     <header>
         <div class="logo">
             <h1>SKINSTORE</h1>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <button>🔍</button>
-        </div>
-        <div class="icons">
-            <span>🌍 USD</span>
-            <span>👤 Sign In</span>
-            <span>🛒 Cart</span>
         </div>
     </header>
 
@@ -37,16 +21,36 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="brands.html">Brands</a></li>
             <li><a href="products.html" class="active">Products</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="Aboutus.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-        <!-- Skin Type Quiz -->
-        <section class="quiz">
-            <h2>Find Your Skin Type</h2>
-            <p>Take our quick quiz to determine the best products for your skin.</p>
-            <button onclick="startQuiz()">Start Quiz</button>
-        </section>
+    <!-- Simple Skin Type Quiz -->
+<section class="quiz">
+    <h2>Find Your Skin Type</h2>
+    <p>Answer this quick question to discover your skin type and get product recommendations:</p>
+    
+    <div id="quizQuestion">
+        <p>How does your skin feel a few hours after washing your face?</p>
+        <ol>
+            <li>Tight, dry, or flaky</li>
+            <li>Shiny all over (forehead, nose, cheeks)</li>
+            <li>Shiny only in T-zone (forehead/nose)</li>
+            <li>Comfortable, not too oily or dry</li>
+            <li>Red, irritated, or sensitive</li>
+        </ol>
+        <input type="number" id="skinAnswer" min="1" max="5" placeholder="Enter number 1-5">
+        <button onclick="showResult()">OK</button>
+    </div>
+    
+    <div id="quizResult" style="display:none;">
+        <h3>Your Skin Type:</h3>
+        <p id="skinType"></p>
+        <h3>Recommendation:</h3>
+        <p id="recommendation"></p>
+        <button onclick="resetQuiz()">Try Again</button>
+    </div>
+</section>
 
     <!-- Slideshow Section -->
     <section class="slideshow">
