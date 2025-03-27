@@ -1,13 +1,14 @@
-// Corrected and Consolidated JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Current Date Display
-    const dateElement = document.getElementById('current-date');
-    if (dateElement) {
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        dateElement.textContent = new Date().toLocaleDateString('en-US', options);
-    }
 
-    // Navigation Highlighting
+    const dateElements = document.querySelectorAll('#current-date');
+    if (dateElements.length > 0) {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = new Date().toLocaleDateString('en-US', options);
+        dateElements.forEach(element => {
+            element.textContent = currentDate;
+        });
+    }
+    
     const currentPage = location.pathname.split('/').pop();
     document.querySelectorAll('nav a').forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -17,50 +18,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Skin Quiz Function
     function startQuiz() {
-        const skinType = prompt("How does your skin feel in the morning?\n\n1. Oily\n2. Dry\n3. Combination\n4. Normal");
+        const skinType = prompt(`How does your skin feel a few hours after washing your face?\n
+1. Tight, dry, or flaky
+2. Shiny all over (forehead, nose, cheeks)
+3. Shiny only in T-zone (forehead/nose)
+4. Comfortable, not too oily or dry
+5. Red, irritated, or sensitive`);
         
-        let recommendation = '';
-        switch(skinType) {
-            case '1':
-                recommendation = "Oily Skin: Look for oil-free, non-comedogenic products with niacinamide and salicylic acid.";
-                break;
-            case '2':
-                recommendation = "Dry Skin: Seek hydrating products with hyaluronic acid and ceramides. Avoid alcohol-based products.";
-                break;
-            case '3':
-                recommendation = "Combination Skin: Use different products for different areas. Lightweight moisturizers with balancing ingredients.";
-                break;
-            case '4':
-                recommendation = "Normal Skin: Maintain with gentle cleansers and balanced hydration. Lucky you!";
-                break;
-            default:
-                recommendation = "Please select a valid option (1-4) to get personalized recommendations.";
+        const results = [
+            { type: "Dry Skin", rec: "Use creamy cleansers and rich moisturizers with hyaluronic acid." },
+            { type: "Oily Skin", rec: "Try gel-based cleansers and oil-free, non-comedogenic moisturizers." },
+            { type: "Combination Skin", rec: "Use gentle cleansers and apply lighter moisturizer on T-zone, richer on cheeks." },
+            { type: "Normal Skin", rec: "Maintain with balanced cleansers and moderate hydration as needed." },
+            { type: "Sensitive Skin", rec: "Look for fragrance-free products with soothing ingredients like aloe or oatmeal." }
+        ];
+        
+        if (skinType && skinType >= 1 && skinType <= 5) {
+            const result = results[skinType-1];
+            alert(`Your Skin Type: ${result.type}\n\nRecommendation: ${result.rec}`);
+        } else {
+            alert("Please select a number between 1-5 to get your skin type recommendation.");
         }
-        
-        alert(`Skin Type Recommendation:\n\n${recommendation}`);
     }
 
-    // Assign quiz button event
     const quizBtn = document.querySelector('.quiz button');
     if (quizBtn) {
         quizBtn.addEventListener('click', startQuiz);
     }
-
-    // Card Hover Effects
-    const cards = document.querySelectorAll('.category-card, .brand-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-            this.style.boxShadow = '';
-        });
-    });
-
-    // Contact Form Validation
+    
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -89,7 +74,4 @@ document.addEventListener('DOMContentLoaded', function() {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
-});
-document.addEventListener("DOMContentLoaded", () => {
-    alert("Welcome to our skincare shop!");
 });
