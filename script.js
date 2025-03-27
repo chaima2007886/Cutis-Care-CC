@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     const dateElements = document.querySelectorAll('#current-date');
     if (dateElements.length > 0) {
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             element.textContent = currentDate;
         });
     }
-    
+
     const currentPage = location.pathname.split('/').pop();
     document.querySelectorAll('nav a').forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -16,9 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Skin Quiz Function
     function startQuiz() {
-        const skinType = prompt(`How does your skin feel a few hours after washing your face?\n
+        const skinType = prompt(`How does your skin feel a few hours after washing your face? Please Select a Number!\n
 1. Tight, dry, or flaky
 2. Shiny all over (forehead, nose, cheeks)
 3. Shiny only in T-zone (forehead/nose)
@@ -44,34 +42,5 @@ document.addEventListener('DOMContentLoaded', function() {
     const quizBtn = document.querySelector('.quiz button');
     if (quizBtn) {
         quizBtn.addEventListener('click', startQuiz);
-    }
-    
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            if (!validateEmail(email)) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
     }
 });
